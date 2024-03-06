@@ -1,0 +1,16 @@
+n, k = map(int,input().split())
+lst = [i+1 for i in range(n)]
+ans = []
+
+num = k-1
+for i in range(n):
+    if len(lst) > num:
+        ans.append(lst.pop(num))
+        
+    elif len(lst) <= num:
+        num = num % len(lst)  # 나머지를 인덱스로 가지는 값을 제거함
+        ans.append(lst.pop(num))
+    
+    num += k-1
+        
+print('<', ', '.join(str(i) for i in ans), '>', sep='')
