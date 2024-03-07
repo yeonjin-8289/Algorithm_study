@@ -1,0 +1,12 @@
+import sys
+num = int(sys.stdin.readline())
+
+for _ in range(num):
+    inp = sys.stdin.readline().rstrip()  # 마지막 \n 제거
+    
+    while '()' in inp:
+        inp = inp.replace('()','')
+    if inp:
+        print('NO')
+    else:
+        print('YES')
